@@ -22,7 +22,7 @@ By analyzing what people value, how they decide, and what paths they follow, the
 
 => Python Flask – lightweight web framework for handling routes, logic, and API endpoints
 
-##Database:
+## Database:
 
 => SQL (MySQL or PostgreSQL) – for managing structured user data, priorities, similarity scores, and predictions
 
