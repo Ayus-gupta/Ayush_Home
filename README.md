@@ -6,7 +6,7 @@ This project reimagines astrology through the lens of data and reason. Instead o
 At its heart is a simple yet powerful belief:
 "Priorities shape destiny. Those who choose faster grow faster."
 
-By analyzing what people value, how they decide, and what paths they follow, the system draws logical parallels between individuals — offering predictive insights not from the stars but from patterns grounded in reality.
+By comparing user-defined priorities and analyzing behavioral similarity, the system offers insights grounded in logic — not birth charts or personality labels.
 
 ## 🚀 Features
 - Predict The Future On basic of resoning and logic with real-world situations.
