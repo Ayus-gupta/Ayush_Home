@@ -1,4 +1,4 @@
-# 🌐 Prieor
+# 🌐 Similara 
 
 ## 📘 Description
 This project reimagines astrology through the lens of data and reason. Instead of relying on stars and signs, it focuses on real-world data, individual priorities, and behavioral similarities to predict possible futures.
