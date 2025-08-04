@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Vue App with Router</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.prod.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue-router@4/dist/vue-router.global.prod.js"></script>
+</head>
+<body>
+  <div id="app">
+    <nav>
+      <router-link to="/mykitchen">My Kitchen</router-link> |
+      <router-link to="/myroom">My Room</router-link> |
+      <router-link to="/tvroom">My TV Room</router-link> |
+      <router-link to="/secretroom">Secret Room</router-link>
+    </nav>
+    <router-view></router-view>
+  </div>
+
+  <script src="routes.js"></script>
+</body>
+</html>
