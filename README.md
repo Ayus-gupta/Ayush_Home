@@ -62,6 +62,6 @@ This app uses only Vue 3 via CDN and requires no build tools.
 1. Clone the repository:
 
 ```bash
-git clone [https://github.com/your-username/into-imagination-vue.git](https://github.com/Ayus-gupta/My_Home)
-cd into-imagination-vue
+git clone https://github.com/Ayus-gupta/Ayush_Home
+cd Ayush_Home
 
