@@ -149,76 +149,76 @@ const MyRoom = {
 const TVRoom = {
   template: `
     <div>
-      <h2>TV Room</h2>
-      <label>
-        <input type="checkbox" v-model="promiseAccepted" />
-        I promise not to spoil the secrets.
-      </label>
-      <ul v-if="promiseAccepted">
-        <li v-for="secret in secrets">{{ secret }}</li>
-      </ul>
-      <h4>Request a Show Topic</h4>
-      <input v-model="requestText" placeholder="Enter topic" />
-      <button @click="addRequest">Request</button>
+
+      <h1>Welcome to My T.V Room</h1> 
+
+      <p>
+        In My T.V Room you can:
+        <ul>
+          <li>🎬 Watch a Movie</li>
+          <li>📩 Request a Movie:
+            <input v-model="movieRequest" placeholder="Enter movie name" />
+            <button @click="addRequest">I Watch Today!</button>
+          </li>
+        </ul>
+      </p>
+
+      <h4>Watched Movies with Timestamps</h4>
       <ul>
-        <li v-for="req in requests">{{ req }}</li>
+        <li v-for="(movie, index) in requestedMovies" :key="index">
+          {{ index + 1 }}. {{ movie.name }} — Watched at: {{ movie.timestamp }}
+        </li>
       </ul>
     </div>
   `,
   data() {
-    let storedPromise = false;
-    try {
-      storedPromise = JSON.parse(localStorage.getItem('promiseAccepted')) || false;
-    } catch (e) {
-      storedPromise = false;
-    }
-
     return {
-      promiseAccepted: storedPromise,
-      secrets: [
-        "I still sleep with a night light.",
-        "I once cried during a cartoon movie.",
-        "I like pineapple on pizza.",
-        "I wrote a love letter but never sent it."
-      ],
-      requestText: '',
-      requests: []
+      movieRequest: '',
+      requestedMovies: [],
+      movieSuggestions: ['Inception', 'Avengers', 'The Lion King', 'Interstellar', '3 Idiots'],
+      miniGames: ['Guess the Word!', 'Rock Paper Scissors', 'Quick Math Challenge', 'Memory Match']
     };
   },
   methods: {
     addRequest() {
-      const text = this.requestText.trim();
-      if (text) {
-        this.requests.push(text);
-        this.requestText = '';
-        this.saveRequests();
+      const movie = this.movieRequest.trim();
+      if (movie) {
+        const timestamp = new Date().toLocaleString();
+        this.requestedMovies.push({ name: movie, timestamp });
+        this.movieRequest = '';
+        this.saveToLocalStorage();
       } else {
-        alert("Please enter a valid topic.");
+        alert('Please enter a movie name.');
       }
     },
-    saveRequests() {
-      localStorage.setItem('tvRoomRequests', JSON.stringify(this.requests));
+    watchMovie() {
+      const random = this.movieSuggestions[Math.floor(Math.random() * this.movieSuggestions.length)];
+      alert("Now Playing: " + random);
     },
-    loadRequests() {
-      const stored = localStorage.getItem('tvRoomRequests');
+    playGame() {
+      const game = this.miniGames[Math.floor(Math.random() * this.miniGames.length)];
+      alert("Let's Play: " + game);
+    },
+    saveToLocalStorage() {
+      localStorage.setItem('tvRoomRequestedMovies', JSON.stringify(this.requestedMovies));
+    },
+    loadFromLocalStorage() {
+      const stored = localStorage.getItem('tvRoomRequestedMovies');
       if (stored) {
         try {
-          this.requests = JSON.parse(stored);
-        } catch {
-          this.requests = [];
+          this.requestedMovies = JSON.parse(stored);
+        } catch (e) {
+          console.warn('Corrupted data in localStorage.');
+          this.requestedMovies = [];
         }
       }
     }
   },
-  watch: {
-    promiseAccepted(newVal) {
-      localStorage.setItem('promiseAccepted', JSON.stringify(newVal));
-    }
-  },
   mounted() {
-    this.loadRequests();
+    this.loadFromLocalStorage();
   }
 };
+
 
 const Secret = {
   template: `
