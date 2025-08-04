@@ -1,0 +1,57 @@
+✅ Topics Covered in This Vue.js Application
+
+὚5️ Frontend Development
+
+HTML structure and semantic elements
+
+Form inputs (<input>, <textarea>, <button>)
+
+Responsive layout
+
+Minimal CSS usage
+
+🔄 Vue.js Core Concepts
+
+createApp() initialization
+
+Component-based architecture
+
+Template syntax ({{ variable }})
+
+data() for reactive state
+
+methods for interactivity
+
+Lifecycle hook: mounted()
+
+State tracking with watch
+
+🎯 Event Handling & Bindings
+
+@click for user actions
+
+v-model for two-way data binding
+
+v-if, v-show for conditionals
+
+v-for for dynamic lists
+
+Basic form validation
+
+🌐 Vue Router (SPA Navigation)
+
+Defining routes with path and component
+
+Navigating using <router-link>
+
+Displaying components via <router-view>
+
+Default redirection on root path
+
+📂 Browser Storage
+
+Using localStorage.setItem() and getItem()
+
+Persisting user data across sessions
+
+JSON encoding/decoding (stringify, parse)
